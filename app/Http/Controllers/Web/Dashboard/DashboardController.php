@@ -16,4 +16,15 @@ class DashboardController extends Controller
     function blog(){
         return view('backend.layouts.blog');
     }
+
+    function login()
+    {
+        return view('auth.login');
+
+    }
+
+    function profile()
+    {
+        return view('backend.layouts.profile');
+    }
 }
