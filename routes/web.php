@@ -1,10 +1,12 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Models\Task;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('welcome');
+    $tasks = Task::get();
+    return view('frontend.todo', compact("tasks"));
 })->name('home');
 
 Route::get('/dashboard', function () {
