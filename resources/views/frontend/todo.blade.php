@@ -61,6 +61,10 @@
             color: #212529;
             transition: color 0.3s, text-decoration 0.3s;
         }
+
+        #addTask {
+            cursor: pointer;
+        }
     </style>
 </head>
 
@@ -69,12 +73,15 @@
     <div class="container">
         <div class="card todo-card">
             <div class="card-header bg-primary text-white" style="border-radius: 12px 12px 0 0;">
-                <h4 class="mb-0"><i class="bi bi-list-task me-2"></i>TO Do List</h4>
+                <h4 class="mb-0"> <a class="text-white" href="{{ route('task.add') }}"><i id="addTask" class="bi bi-plus-lg me-4" ></i></a> TO Do List</h4>
+
             </div>
             <div class="card-body">
 
                 <ul class="list-group list-group-flush">
-                    @foreach ($tasks as $task)
+
+
+                    @forelse ($tasks as $task)
                         <li id="taskItem"
                             class="list-group-item list-group-item-optimized d-flex justify-content-between align-items-center">
                             <div class="d-flex align-items-center">
@@ -100,13 +107,25 @@
                                 </button>
                             </div>
                         </li>
-                    @endforeach
+                    @empty
+                        <p>No task found</p>
+                    @endforelse
+
+
 
                 </ul>
             </div>
             <div class="card-footer text-muted text-center bg-white" style="border-radius: 0 0 12px 12px;">
                 <small>Click the checkbox to mark as completed.</small>
             </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+           
+
         </div>
     </div>
 
