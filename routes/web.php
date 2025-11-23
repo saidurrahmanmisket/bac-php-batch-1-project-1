@@ -19,7 +19,7 @@ Route::middleware('auth')->group(function () {
 
 Route::get('/', function () {
    
-    return view('frontend.app');
+    return view('frontend.layouts.home');
 })->name('home');
 
 require __DIR__.'/auth.php';
