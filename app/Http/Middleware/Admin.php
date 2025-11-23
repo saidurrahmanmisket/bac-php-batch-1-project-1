@@ -19,7 +19,8 @@ class Admin
              return $next($request);
         }else{
              auth()->logout();
-            return abort(401);
+             flash()->error('You don\'t have permission to access admin dashboard ');
+            return redirect()->route('home');
         }
     }
 }
