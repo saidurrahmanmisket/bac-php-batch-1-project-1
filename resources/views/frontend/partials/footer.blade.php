@@ -139,4 +139,3 @@
 <!-- END FOOTER -->
 
 
-@include('frontend.partials.script')
