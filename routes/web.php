@@ -1,15 +1,21 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
-use App\Models\Task;
+use App\Http\Controllers\Web\Dashboard\BlogCategoryController;
+use App\Http\Controllers\Web\Dashboard\BlogController;
+use App\Http\Controllers\Web\Dashboard\DashboardController;
 use Illuminate\Support\Facades\Route;
 
+Route::middleware('auth', 'verified', 'admin')->group(function () {
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    Route::get('/dashboard/blog', [BlogController::class, 'index'])->name('dashboard.blog');
 
+    // blog category
+    Route::get('/dashboard/blog-category', [BlogCategoryController::class, 'index'])->name('dashboard.blog.category');
+    Route::get('/dashboard/blog-category/create', [BlogCategoryController::class, 'create'])->name('dashboard.blog.category.create');
+    Route::get('/dashboard/blog-category', [BlogCategoryController::class, 'store'])->name('dashboard.blog.category.store');
 
-Route::get('/dashboard', function () {
-    $user = auth()->user();
-    return view('backend.layouts.dashboard', compact('user'));
-})->middleware(['auth', 'verified', 'admin'])->name('dashboard');
+});
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -18,8 +24,8 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::get('/', function () {
-   
+
     return view('frontend.layouts.home');
 })->name('home');
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

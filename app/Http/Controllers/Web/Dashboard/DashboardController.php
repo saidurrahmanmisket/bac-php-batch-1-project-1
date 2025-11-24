@@ -8,23 +8,10 @@ use Illuminate\Http\Request;
 
 class DashboardController extends Controller
 {
-    function dashboard(){
+    function index(){
        $user = User::first();
         return view('backend.layouts.dashboard', compact('user'));
     }
 
-    function blog(){
-        return view('backend.layouts.blog');
-    }
-
-    function login()
-    {
-        return view('auth.login');
-
-    }
-
-    function profile()
-    {
-        return view('backend.layouts.profile');
-    }
+   
 }
