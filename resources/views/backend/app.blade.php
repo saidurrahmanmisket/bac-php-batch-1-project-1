@@ -362,7 +362,7 @@
                                 class="header-brand-img light-logo1" alt="logo">
                         </a>
                         <!-- LOGO -->
-                        
+
                         <div class="d-flex order-lg-2 ms-auto header-right-icons">
                             <div class="dropdown d-xl-none d-md-block d-none">
                                 <a href="#" class="nav-link icon" data-bs-toggle="dropdown">
@@ -417,7 +417,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                            
+
                                         <div class="dropdown d-md-flex profile-1">
                                             <a href="#" data-bs-toggle="dropdown"
                                                 class="nav-link pe-2 leading-none d-flex animate">
@@ -458,7 +458,7 @@
                                                     </svg>
                                                     Log out
                                                 </button>
-                                                <form>
+                                                </form>
                                             </div>
                                         </div>
                                         <!-- Profile -->

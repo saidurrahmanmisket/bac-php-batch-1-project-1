@@ -16,7 +16,7 @@
                             </div>
                             <div class="card-body">
                                 <div class="">
-                                    <form class="form-horizontal" method="GET"
+                                    <form class="form-horizontal" method="POST"
                                         action="{{ route('dashboard.blog.category.store') }}" enctype="multipart/form-data">
                                         @csrf
                                         <div class="form-group">
