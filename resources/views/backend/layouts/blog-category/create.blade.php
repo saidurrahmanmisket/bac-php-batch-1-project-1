@@ -23,6 +23,9 @@
                                             <label for="defaultconfig" class="form-label">Name:</label>
                                             <input name="name" type="text" class="form-control" maxlength="25"
                                                 id="defaultconfig">
+                                            @error('name')
+                                                <p class="text-danger">{{$message}}</p>
+                                            @enderror
                                         </div>
 
                                         <div class="dropify-wrapper" style="height: 212px;">
@@ -48,6 +51,9 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        @error('image')
+                                        <p class="text-danger">{{$message}}</p>
+                                        @enderror
                                         <button type="submit" class="btn btn-primary mt-5">Save</button>
                                     </form>
                                 </div>
