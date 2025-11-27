@@ -31,3 +31,6 @@
     <!-- INTERNAL Switcher css -->
     <link href="{{ asset('dashboard/assets/switcher/css/switcher.css') }}" rel="stylesheet">
     <link href="{{ asset('dashboard/assets/switcher/demo.css') }}" rel="stylesheet">
+
+
+    @stack('styles')

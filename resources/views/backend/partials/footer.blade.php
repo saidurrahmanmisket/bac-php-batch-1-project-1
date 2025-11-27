@@ -50,3 +50,7 @@
 
     <!-- SWITCHER JS -->
     <script src="{{ asset('dashboard/assets/switcher/js/switcher.js') }}"></script>
+
+
+
+    @stack('scripts')

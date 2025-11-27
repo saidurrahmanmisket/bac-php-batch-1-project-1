@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Web\Dashboard;
 
+use App\DataTables\CategoryDataTable;
 use App\Http\Controllers\Controller;
 use App\Models\category;
 use Illuminate\Http\Request;
@@ -9,8 +10,8 @@ use Illuminate\View\View;
 
 class BlogCategoryController extends Controller
 {
-     function index(){
-        return view('backend.layouts.blog-category.blog-category');
+     function index(CategoryDataTable $dataTable){
+        return $dataTable->render('backend.layouts.blog-category.blog-category');
     }
 
 
