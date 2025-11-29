@@ -94,62 +94,20 @@
                         <div class="cat_slider cat_style1 mt-4 mt-md-0 carousel_slider owl-carousel owl-theme nav_style5"
                             data-loop="true" data-dots="false" data-nav="true" data-margin="30"
                             data-responsive='{"0":{"items": "2"}, "480":{"items": "3"}, "576":{"items": "4"}, "768":{"items": "5"}, "991":{"items": "6"}, "1199":{"items": "7"}}'>
-                            <div class="item">
-                                <div class="categories_box">
-                                    <a href="#">
-                                        <img src="{{ asset('frontend/assets/images/cat_img1.png') }}" alt="cat_img1" />
-                                        <span>Television</span>
-                                    </a>
+                            @forelse($categorys as $item)
+                                <div class="item">
+                                    <div class="categories_box">
+                                        <a href="#">
+                                            @if(isset($item->image))
+                                            <img src="{{ asset($item->image) }}" alt="cat_img1" />
+                                            @endif
+                                            <span>{{$item->name ?? ''}}</span>
+                                        </a>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="item">
-                                <div class="categories_box">
-                                    <a href="#">
-                                        <img src="{{ asset('frontend/assets/images/cat_img2.png') }}" alt="cat_img2" />
-                                        <span>Mobile</span>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="categories_box">
-                                    <a href="#">
-                                        <img src="{{ asset('frontend/assets/images/cat_img3.png') }}" alt="cat_img3" />
-                                        <span>Headphone</span>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="categories_box">
-                                    <a href="#">
-                                        <img src="{{ asset('frontend/assets/images/cat_img4.png') }}" alt="cat_img4" />
-                                        <span>Watch</span>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="categories_box">
-                                    <a href="#">
-                                        <img src="{{ asset('frontend/assets/images/cat_img5.png') }}" alt="cat_img5" />
-                                        <span>Game</span>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="categories_box">
-                                    <a href="#">
-                                        <img src="{{ asset('frontend/assets/images/cat_img6.png') }}" alt="cat_img6" />
-                                        <span>Camera</span>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="categories_box">
-                                    <a href="#">
-                                        <img src="{{ asset('frontend/assets/images/cat_img7.png') }}" alt="cat_img7" />
-                                        <span>Audio</span>
-                                    </a>
-                                </div>
-                            </div>
+                            @empty
+                                <p>No category Found</p>
+                            @endforelse
                         </div>
                     </div>
                 </div>
