@@ -14,6 +14,8 @@ Route::middleware('auth', 'verified', 'admin')->group(function () {
     // blog category
     Route::get('/dashboard/blog-category', [BlogCategoryController::class, 'index'])->name('dashboard.blog.category');
     Route::get('/dashboard/blog-category/create', [BlogCategoryController::class, 'create'])->name('dashboard.blog.category.create');
+    Route::get('/dashboard/blog-category/edit/{id}', [BlogCategoryController::class, 'edit'])->name('dashboard.blog.category.edit');
+    Route::post('/dashboard/blog-category/update/{id}', [BlogCategoryController::class, 'update'])->name('dashboard.blog.category.update');
     Route::post('/dashboard/blog-category', [BlogCategoryController::class, 'store'])->name('dashboard.blog.category.store');
     Route::delete('/dashboard/blog-category/delete/{id}', [BlogCategoryController::class, 'delete'])->name('dashboard.blog.category.delete');
 

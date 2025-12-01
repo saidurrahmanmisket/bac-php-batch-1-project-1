@@ -1,5 +1,5 @@
 <div class="btn-group gap-3" role="group">
-    <a href="" class="btn btn-warning btn-sm rounded-2">Edit</a>
+    <a href="{{ route('dashboard.blog.category.edit', ['id' => $row->id]) }}" class="btn btn-warning btn-sm rounded-2">Edit</a>
     <form action="{{ route('dashboard.blog.category.delete', ['id' => $row->id]) }}" method="POST" style="display:inline;">
         @csrf
         @method('DELETE')
