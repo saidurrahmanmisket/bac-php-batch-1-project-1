@@ -47,4 +47,14 @@ class BlogCategoryController extends Controller
         }
     }
 
+    function delete($id)
+    {
+        $category = category::find($id);
+        if (!$category){
+            return redirect()->route('dashboard.blog.category')->with('error', 'Blog Category Not Found');
+        }
+        $category->delete();
+        return redirect()->route('dashboard.blog.category')->with('success', 'Blog Category Deleted Successfully');
+    }
+
 }
