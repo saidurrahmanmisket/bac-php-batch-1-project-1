@@ -19,6 +19,15 @@ Route::middleware('auth', 'verified', 'admin')->group(function () {
     Route::post('/dashboard/blog-category', [BlogCategoryController::class, 'store'])->name('dashboard.blog.category.store');
     Route::delete('/dashboard/blog-category/delete/{id}', [BlogCategoryController::class, 'delete'])->name('dashboard.blog.category.delete');
 
+
+    // blog
+    Route::get('/dashboard/blog', [BlogController::class, 'index'])->name('dashboard.blog');
+    Route::get('/dashboard/blog/create', [BlogController::class, 'create'])->name('dashboard.blog.create');
+    Route::get('/dashboard/blog/edit/{id}', [BlogController::class, 'edit'])->name('dashboard.blog.edit');
+    Route::post('/dashboard/blog/update/{id}', [BlogController::class, 'update'])->name('dashboard.blog.update');
+    Route::post('/dashboard/blog', [BlogController::class, 'store'])->name('dashboard.blog.store');
+    Route::delete('/dashboard/blog/delete/{id}', [BlogController::class, 'delete'])->name('dashboard.blog.delete');
+
 });
 
 Route::middleware('auth')->group(function () {

@@ -22,9 +22,9 @@
                                         <label for="category" class="form-label">Category:</label>
 
                                         <select name="category" class="form-select" aria-label="Default select example" id="category">
-                                            <option selected>Open this select menu</option>
+                                            <option >Open this select menu</option>
                                             @forelse($category as $item)
-                                                <option value="{{ $item->id }}">{{$item->name}}</option>
+                                                <option @if($blog->category->name == $item->name) selected @endif value="{{ $item->id }}">{{$item->name}}</option>
                                             @empty
                                             @endforelse
 
@@ -87,7 +87,7 @@
                                                 <div class="dropify-infos">
                                                     <div class="dropify-infos-inner">
                                                         <p class="dropify-filename"><span
-                                                                    class="dropify-filename-inner"></span></p>
+                                                                class="dropify-filename-inner"></span></p>
                                                         <p class="dropify-infos-message">Drag and drop or click to
                                                             replace
                                                         </p>
@@ -118,7 +118,7 @@
                                                 <div class="dropify-infos">
                                                     <div class="dropify-infos-inner">
                                                         <p class="dropify-filename"><span
-                                                                    class="dropify-filename-inner"></span></p>
+                                                                class="dropify-filename-inner"></span></p>
                                                         <p class="dropify-infos-message">Drag and drop or click to
                                                             replace
                                                         </p>
